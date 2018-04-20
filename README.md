@@ -20,4 +20,4 @@ Data refreshed every 15 minutes.
 5. Flask
 
 # Architecture
-S3 -> Kafka -> Spark -> ElasticSearch -> Flask
+S3 -> Kafka -> Spark/ElasticSearch -> Cassandra/Big Table -> Flask
