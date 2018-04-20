@@ -4,7 +4,7 @@ Study whats happening across the world in realtime
 # Use Cases
 1. What if you could know where earthquakes are happening in the whole world?
 2. What if we could know which locations in the world need immediate aid and for what reason?
-3. What if you could know all the places on the earth where a pandemic is breaking out?
+3. What if you could know all the places on the earth where pandemics are breaking out?
 4. What if you could understand the emotions of people after an event happened, say a new law is passed
 
 # Data Source
