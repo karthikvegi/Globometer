@@ -1,7 +1,7 @@
 # Unravel the World
 Study whats happening across the world in realtime
 
-# Idea
+# Use Cases
 1. What if you could know where earthquakes are happening in the whole world?
 2. What if we could know which locations in the world need immediate aid and for what reason?
 3. What if you could know all the places on the earth where a pandemic is breaking out?
