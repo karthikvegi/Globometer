@@ -10,7 +10,7 @@ We are implementing an algorithm to compute the stability of the country based o
 The data to process is TB scale and it is an at event and sub-event levels.The events and sub-events need to be identified, joined to the event-mentions, and use different features like num-mentions, num-sources, no-articles, geo-type (city/state/country), avg-doc-tone by looking at all the mentions of the news/articles of the event and aggregate is to various levels of granularity to observe the stability of a country over a period of time.
 
 # Data Pipeline
-![GitHub Logo](/images/data-pipeline.png)
+![GitHub Logo](/images/pipeline.png)
 
 # Choice of Database
 The simplest model for storing time series data is creating a wide row of data for each source and the row should grow as needed to accommodate the data. Cassandra’s data model is an excellent fit for handling data in sequence regardless of datatype or size. When writing data to Cassandra, data is sorted and written sequentially to disk. When retrieving data by row key and then by range, you get a fast and efficient access pattern due to minimal disk seeks – time series data is an excellent fit for this type of pattern. 
