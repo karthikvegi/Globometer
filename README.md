@@ -12,5 +12,10 @@ The data to process is TB scale and it is an at event and sub-event levels.The e
 # Data Pipeline
 ![GitHub Logo](/images/data-pipeline.png)
 
+# Choice of Database
+The simplest model for storing time series data is creating a wide row of data for each source and the row should grow as needed to accommodate the data. Cassandra’s data model is an excellent fit for handling data in sequence regardless of datatype or size. When writing data to Cassandra, data is sorted and written sequentially to disk. When retrieving data by row key and then by range, you get a fast and efficient access pattern due to minimal disk seeks – time series data is an excellent fit for this type of pattern. 
+
+
+
 
 
