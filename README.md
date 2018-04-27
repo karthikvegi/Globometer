@@ -1,23 +1,20 @@
 # Monitor the World
-Study whats happening across the world in realtime
-
-# Use Cases
-1. What if you could know where earthquakes are happening in the whole world?
-2. What if we could know which locations in the world need immediate aid and for what reason?
-3. What if you could know all the places on the earth where pandemics are breaking out?
-4. What if you could understand the emotions of people after an event happened, say a new law is passed
+Monitor the stability of countries across world and the important events that contribute to it
 
 # Data Source
-GDELT, backed by Google Jigsaw, is creating a platform to fundamentally reimagine how we study the human world in realtime at a planetary scale. In essence, GDELT monitors the news all over the world, translates it from 100 languages, processes it to identify all events, counts, quotes, people, organizations, locations, themes, emotions, relevant imagery, video, and embedded social media posts, placed it into global context, and makes it available for enabling open research on the planet itself. 
+GDELT, backed by Google Jigsaw, is creating a platform to fundamentally reimagine how we study the human world in realtime at a planetary scale. In essence, GDELT monitors the news all over the world, translates it from 100 languages, processes it to identify all events, attaches a CAMEO (Conflict and Mediation Observation) code and given a Goldstein score (-10 to +10) capturing the potential impact of the event.
 
-Data refreshed every 15 minutes.
+# What is the data and engineering problem?
+We are implementing an algorithm to compute the stability of the country based on the events and their impact. 
 
+The data to process is TB scale and it is an at event and sub-event levels.The events and sub-events need to be identified, joined to the event-mentions, and use different features like num-mentions, num-sources, no-articles, geo-type (city/state/country), avg-doc-tone by looking at all the mentions of the news/articles of the event and aggregate is to various levels of granularity to observe the stability of a country over a period of time.
+ 
 # Relevant Technologies
-1. Kafka 
-2. ElasticSearch
-3. Spark
-4. Cassandra? Google Big Table?
-5. Flask
+1. S3
+2. Spark/Spark SQL
+3. MySQL
+4. Flask
+5. ElasticSearch
 
-# Architecture
-S3 -> Kafka -> Spark/ElasticSearch -> Cassandra/Big Table -> Flask
+# Data Pipeline
+
