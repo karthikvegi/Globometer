@@ -17,6 +17,5 @@ The data to process is TB scale and it is an at event and sub-event levels.The e
 5. ElasticSearch
 
 # Data Pipeline
-![GitHub Logo](/images/data-pipeline.png)
-Format: ![Alt Text](url)
+(/images/data-pipeline.png)
 
