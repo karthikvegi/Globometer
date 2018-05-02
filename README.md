@@ -1,12 +1,12 @@
-# Monitor the World
-Monitor the stability of countries across world and the important events that contribute to it
+# Globometer
+A dashboard to monitor the socio-political events happening on the global stage and how they are affecting the stability of countries over time
 
 # Data Source
-GDELT, backed by Google Jigsaw, is creating a platform to fundamentally reimagine how we study the human world in realtime at a planetary scale. In essence, GDELT monitors the news all over the world, translates it from 100 languages, processes it to identify all events happening around the world.
+GDELT, backed by Google Jigsaw, monitors the world’s broadcast, print, and web news in realtime at a planetary scale. The dataset is available daily from the year 1979.
 
 # What is the use case?
 We are computing the stability of the country based on the events and their impact. 
-The data to process is ~ 1 TB and it is an at event and sub-event levels.The events and sub-events need to be identified, joined to the event-mentions, and use different features like num-mentions, num-sources, no-articles, geo-type (city/state/country), avg-doc-tone by looking at all the mentions of the news/articles of the event and aggregate is to various levels of granularity to observe the stability of a country over a period of time.
+The data to process is ~ 0.5TB at an event and sub-event levels.The events and sub-events need to be identified, joined to the event-mentions, and using features like num-mentions, num-sources, num-articles, geo-type (city/state/country), avg-doc-tone by looking at all the mentions of the news/articles of the event and aggregate it to various levels of granularity to observe the socio-political stability of a country over a period of time.
 
 # Data Pipeline
 ![GitHub Logo](/images/pipeline.png)
