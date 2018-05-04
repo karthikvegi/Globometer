@@ -1,4 +1,4 @@
-# Globometer
+# World Monitor
 A dashboard to monitor the socio-political events happening on the global stage and how they are affecting the stability of countries over time
 
 # Data Source
