@@ -26,20 +26,28 @@ def query_post():
     date = request.json["date"]
     period = request.json["period"].lower()
     query = ""
-    query += "SELECT * FROM monthly WHERE country = %s and date = %s"
-    result = session.execute(query, parameters = [country,int(date)])[0]
+    if period == "daily":
+	       query += "SELECT * FROM daily WHERE country = %s and date = %s"
+    elif period == "monthly":
+	       query += "SELECT * FROM monthly WHERE country = %s and date = %s"
+    elif period == "yearly":
+	       query += "SELECT * FROM yearly WHERE country = %s and date = %s"
+    try:
+        result = session.execute(query, parameters = [country,int(date)])[0]
+    except Exception:
+        return "missing"
 
-    def create_dict(ordermap):
-        n_dict = {}
+    def get_events(ordermap):
+        events = {}
         for event in ordermap:
-           n_dict[str(event)] = {str(key): value for key, value in ordermap[event].items()}
-        return n_dict
+           events[str(event)] = {str(key): value for key, value in ordermap[event].items()}
+        return events
 
-    clean_dict = create_dict(result[2])
-    total_mentions = clean_dict["event_count"]['total']
-    clean_dict.pop('event_count',None)
-    jsonresponse = {"Events":clean_dict}
-    return str(jsonresponse)
+    events_dict = get_events(result[2])
+    # total_mentions = clean_dict["event_count"]['total']
+    events_dict.pop('event_count',None)
+    # jsonresponse = {"Events":clean_dict}
+    return str(events_dict)
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

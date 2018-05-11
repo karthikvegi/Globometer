@@ -155,6 +155,6 @@ def process_data(rdd, time_period):
 
     return final_event_data
 
-monthly_data = process_data(rdd, "monthly")
+monthly_data = process_data(rdd, "yearly")
 print monthly_data.first()
-monthly_data.saveToCassandra("gdelt","monthly")
+monthly_data.saveToCassandra("gdelt","yearly")
