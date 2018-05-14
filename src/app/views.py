@@ -1,7 +1,6 @@
 #jsonify creates a json representation of the response
-from flask import request
-from flask import jsonify
-from flask import render_template
+from app import app
+from flask import request, redirect, render_template, jsonify
 from cassandra.cluster import Cluster
 from collections import OrderedDict
 import simplejson as json
@@ -13,8 +12,9 @@ cluster = Cluster(['ec2-54-212-219-13.us-west-2.compute.amazonaws.com',
                     'ec2-54-148-6-162.us-west-2.compute.amazonaws.com'])
 session = cluster.connect('gdelt')
 
-from flask import Flask
-app = Flask(__name__)
+@app.route('/')
+def hello():
+    return 'Hello'
 
 @app.route('/monitor')
 def query():
@@ -49,5 +49,3 @@ def query_post():
     # jsonresponse = {"Events":clean_dict}
     return str(events_dict)
 
-if __name__ == "__main__":
-    application.run(host='0.0.0.0')
