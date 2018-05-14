@@ -5,7 +5,7 @@ import pyspark_cassandra
 
 # sqlContext = SQLContext(sc)
 sc = SparkContext()
-data = sc.textFile("s3a://kv-data/newest/*")
+data = sc.textFile("s3a://kv-data/old/*")
 # data = sc.textFile("s3a://gdelt-open-data/events/*")
 # data = sc.textFile("s3a://gdelt-open-data/events/*")
 rdd = data.map(lambda x: x.encode("utf", "ignore"))
@@ -17,7 +17,7 @@ def process_data(rdd, time_period):
     def ingest_data(rdd, period):
         if period == "daily":
             time = 1
-        if period == "monthly":
+        elif period == "monthly":
             time = 2
         else:
             time = 3
@@ -155,6 +155,6 @@ def process_data(rdd, time_period):
 
     return final_event_data
 
-monthly_data = process_data(rdd, "yearly")
+monthly_data = process_data(rdd, "daily")
 print monthly_data.first()
-monthly_data.saveToCassandra("gdelt","yearly")
+monthly_data.saveToCassandra("gdelt","daily")
