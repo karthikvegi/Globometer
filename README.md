@@ -1,8 +1,7 @@
 ![GitHub Logo](/images/title.png)
 A dashboard to monitor the socio-political events happening on the global stage and how they are affecting the stability of countries
 
-# Data Source
-GDELT, backed by Google Jigsaw, monitors the world’s broadcast, print, and web news in realtime at a planetary scale. The dataset is available daily from the year 1979.
+![GitHub Logo](/images/source.png)
 
 # Purpose
 We want to look at the important socio-political events that are affecting the stability of the countries over time.
