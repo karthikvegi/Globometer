@@ -11,7 +11,6 @@ The data to process is ~ 2 TB at an event and sub-event levels.
 # Data Pipeline
 ![GitHub Logo](/images/pipeline.png)
 
-# Data Processing
 ![GitHub Logo](/images/processing.png)
 
 # Choice of Database
